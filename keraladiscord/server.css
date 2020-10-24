@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+:root {
+  --main-background: #0b0c0f;
+  --main-fonts-color: #fff;
+  --main-decor-color: #228B22;
+  --main-header-background: #21252e;
+  --main-font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+main {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-background);
+}
+/*──────────────────
+       img
+──────────────────*/
+
+img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+hr {
+  width: 300px;
+  margin: auto;
+}
+
+/*──────────────────
+       home
+──────────────────*/
+
+#home {
+  margin: auto;
+  height: 100vh;
+  color: var(--main-fonts-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#home .filter {
+  background: url("https://images.unsplash.com/photo-1590035846812-644106bf29ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.2;
+}
+
+.intro {
+  text-align: center;
+  color: var(--main-fonts-color);
+  z-index: 1;
+  margin: auto;
+  padding: 20px;
+}
+
+.intro p,
+h3 {
+  margin: 5px;
+  font-size: 1.2rem;
+  font-family: var(--main-font-family);
+  text-align: center;
+}
+
+h2 {
+  padding-bottom: 15px;
+  letter-spacing: normal;
+  font-family: var(--main-font-family);
+  font-style: normal;
+  font-size: 40px;
+  color: var(--main-fonts-color);
+  text-shadow: 0px 0px 40px var(--main-decor-color);
+}
+/*──────────────────
+      iframe - discord
+──────────────────*/
+iframe {
+    position : absolute;
+    top      : 0;
+    right    : 0;
+    height   : 100%;
+    width    : 50%;
+    border: 0;
+}
+
+@keyframes discord {
+	0% {height:70px; width:250px;}
+	 100% {height:500px;width:350px;}
+}
+@keyframes discord-c {
+	0% {height:250px;width:350px;}
+    100% {height:70px; width:250px;}
+}
+.discord {
+	animation-name: discord-c;
+	animation-duration: 2s;
+	animation-play-state: pause;
+    height:70px;
+	width:250px;
+}
+
+.discord:hover {
+	height:500px;
+	width:350px;
+	animation-name: discord;
+	animation-duration: 2s;
+	animation-play-state: pause;
+}
+
+/*──────────────────
+     Scrollbar
+──────────────────*/
+::-webkit-scrollbar {
+  width: 5px;
+  background: rgba(5, 5, 5, 1);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--main-decor-color);
+  box-shadow: inset 0 0 20px var(--main-decor-color);
+}
+::-webkit-scrollbar-track {
+  margin-top: 80px;
+  border-radius: 10px;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translatex(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0px);
+  }
+}
+
+/*──────────────────
+    media queries
+──────────────────*/
+
+@media only screen and (max-width: 500px) {
+  #home
+  {
+    overflow-x: hidden;
+  }
+  header {
+    background-color: var(--main-header-background);
+  }
+  .desktop-only {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
