@@ -1,0 +1,14 @@
+name: remote git pull
+on: [push]
+
+defaults:
+  run:
+    working-directory: /ambu/blacksmithop/
+    
+jobs:
+  build:
+    name: Build
+    runs-on: self-hosted
+    steps:
+      - run: git pull    
+
